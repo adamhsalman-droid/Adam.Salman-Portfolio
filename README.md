@@ -10,7 +10,7 @@ During this course, I will work on different database topics and practical tasks
 
 ## Table of Contents
 
-* Module 01: Introduction and Local-First
+* [Module 01: Introduction and Local-First](module-01/README.md)
 
 
 
