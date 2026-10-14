@@ -26,7 +26,7 @@ My goal is to understand the basics of databases and practise using them through
 Our Task Pod has three members:
 
 - Adam Salman — [Portfolio](https://github.com/adamhsalman-droid/Adam.Salman-Portfolio)
-- Mohamed Hamed — [Portfolio](https://github.com/nassarrrrr/M.Nassar-HSBI-Database-Portofolio)
+- Mohamed Alsayed — [Portfolio](https://github.com/mbahnasy426/Mohamed-Hamed)
 - Mohamed Nassar — [Portfolio](https://github.com/nassarrrrr/M.Nassar-HSBI-Database-Portofolio)
 
 ## Contributions
@@ -45,7 +45,7 @@ Our Task Pod has three members:
 - [ ] **Task 3:** Run `uv` and commit the generated `pyproject.toml` and `uv.lock` alongside `uv-check.py` output
 - [ ] **Task 4:** Use `sqlite3` to create `shell-tour.txt` and a fresh `tour.sql` dump; record my favourite dot-command
 - [ ] **Task 5:** Play SQL Island and complete [my answers](sql-island.md) with a real progress screenshot
-- [ ] **Task 6:** Run `generate_telemetry.py`, `load_telemetry.py`, and `query_telemetry.py`; save file size, row counts, and timed results
+- [x] **Task 6:** Run `generate_telemetry.py`, `load_telemetry.py`, and `query_telemetry.py`; save file size, row counts, and timed results
 - [ ] **Task 7:** Run and inspect the AI query; record its real query plan and a verification paragraph
 - [ ] Complete [Module 01 reflection](reflection.md)
 
