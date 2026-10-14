@@ -26,7 +26,7 @@ My goal is to understand the basics of databases and practise using them through
 Our Task Pod has three members:
 
 - Adam Salman — [Portfolio](https://github.com/adamhsalman-droid/Adam.Salman-Portfolio)
-- Mohamed Alsayed — [Portfolio](https://github.com/mbahnasy426/Mohamed-Hamed)
+- Mohamed Hamed — [Portfolio](https://github.com/nassarrrrr/M.Nassar-HSBI-Database-Portofolio)
 - Mohamed Nassar — [Portfolio](https://github.com/nassarrrrr/M.Nassar-HSBI-Database-Portofolio)
 
 ## Contributions
@@ -36,6 +36,7 @@ Our Task Pod has three members:
 - **Adam Salman (Tasks 6–7):** Generated and analyzed telemetry data using Python and SQLite, and verified AI-generated SQL queries.
 
 **Teamwork:** All three members discussed the assignments, reviewed the results, and supported each other throughout the project.
+
 
 ## Task evidence checklist
 
