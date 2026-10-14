@@ -1,16 +1,31 @@
 # Module 01 — Reflection
 
-## What worked?
-In Task 6, I generated reproducible synthetic telemetry readings for three CNC machines using Python, saved them to a CSV file, and loaded them into an embedded SQLite database using bound parameters. The scripts generated and loaded 172,800 rows in total (57,600 per machine). SQL queries counted readings per machine, found maximum vibration, and counted readings above the vibration threshold. My recorded results are saved in [query-results.txt](query-results.txt).
+## What I learned in the lecture
 
-## What broke or was difficult?
-One problem while working in VS Code was that the Code Runner tried to execute Python using `python` directly and Windows reported that Python could not be found. Running scripts with `uv run python ...` uses the project environment instead. This is a development-environment issue, not a SQLite data issue.
+Before this lecture, I did not have a clear understanding of databases or SQL. I learned that **data** means pieces of information, such as a name, a number, or a machine reading. A **database** is a place where information is stored and organized so we can work with it.
 
-## How did my understanding of embedded databases change?
-I learned that SQLite stores data in a local database file without requiring a separate database server. For Task 6, the database contained 172,800 synthetic readings and occupied 10,526,720 bytes (about 10.04 MiB). I measured three queries: readings per machine took 41.786 ms, maximum vibration took 61.548 ms, and counting readings with `vib_rms > 2.0` took 15.227 ms. The highest measured vibration was 3.168 on `cnc-02`, and 11,714 readings exceeded the threshold. These observations show SQLite handled this dataset quickly on the test machine; execution time can vary with hardware, workload, and repeated runs.
+I also learned that **SQL** stands for **Structured Query Language**. It is a language used to communicate with a database. We can use SQL to **find, add, update, and delete information**. An SQL query is an instruction that we send to a database, for example to find specific records.
 
-## How did I verify the AI-generated SQL?
-The Task 7 SQL query was executed against the stored readings, and its output and `EXPLAIN QUERY PLAN` were recorded in [query-results.txt](query-results.txt). The query produced average spindle-load values of 60.43 for `cnc-03`, 60.37 for `cnc-01`, and 60.36 for `cnc-02`. The plan reported a scan of `readings` and temporary B-trees for grouping and ordering. A limitation is that `time(ts) > '18:00:00'` selects only times after 18:00 until midnight; it does not cover readings after midnight and excludes exactly 18:00. More detailed verification is documented in [Task 7 notes](task-07-ai-verification.md).
+## What I learned about local-first databases
 
-## How did I work with my Task Pod?
-Our documented task allocation was: Mohamed Nassar — Tasks 1–4 (portfolio setup, Python environment, and SQLite shell); Mohamed Alsayed — Task 5 (SQL Island); and Adam Salman — Tasks 6–7 (telemetry dataset and SQL verification). The Task Pod member portfolios are linked in [Module 01 README](README.md).
+One idea I found interesting was **local-first**: keeping data on my own computer so I can access and work with it without needing an internet connection. I like that I can work on the data even when I am offline, and local access can feel faster because I do not need to wait for a network connection. I also learned that SQLite is an embedded database that stores information in a local file, without requiring a separate database server.
+
+## What I understood from Tasks 1–5
+
+**Task 1 — GitHub portfolio:** I learned how to organize my course work in a GitHub repository and why it is useful to keep my learning progress in one place.
+
+**Task 2 — Git and teamwork:** I became more familiar with commits, pushing changes, adding links in Markdown, and documenting what each Task Pod member contributed.
+
+**Task 3 — Python environment:** I learned why setting up tools and dependencies matters before starting practical exercises. Using `uv` helped me work with a consistent Python environment.
+
+**Task 4 — SQLite shell:** I saw how SQLite can create tables, store records, and run SQL commands locally. Commands such as `.tables` and `.schema` helped me explore the database structure.
+
+**Task 5 — SQL Island:** Practicing SQL through a game made the basic commands easier to understand. I became more familiar with `SELECT`, `WHERE`, and other ways to filter or work with information in tables.
+
+## What was challenging and what I want to improve
+
+At first, the differences between data, a database, SQL, and SQLite were confusing. The lecture and exercises helped me connect these ideas. I still want to get more comfortable writing SQL queries without examples and understanding when to use different commands.
+
+## Overall reflection
+
+The most important thing I learned is that databases are not just places to save information: we can use SQL to organize, search, and change that information. I also liked the local-first idea because it allows me to work with my data without depending on an internet connection. The first five tasks helped me turn the lecture concepts into practical experience.
