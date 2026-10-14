@@ -31,7 +31,11 @@ Our Task Pod has three members:
 
 ## Contributions
 
-We worked together as a Task Pod, discussing the assignments and reviewing our progress.
+- **Mohamed Nassar (Tasks 1–4):** Set up the GitHub portfolio, configured the Python environment, and completed the SQLite shell exercises.
+- **Mohamed Alsayed (Task 5):** Completed the SQL Island exercises, practiced SQL commands, and documented the learning experience.
+- **Adam Salman (Tasks 6–7):** Generated and analyzed telemetry data using Python and SQLite, and verified AI-generated SQL queries.
+
+**Teamwork:** All three members discussed the assignments, reviewed the results, and supported each other throughout the project.
 
 ## Task evidence checklist
 
