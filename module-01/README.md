@@ -26,7 +26,7 @@ My goal is to understand the basics of databases and practise using them through
 Our Task Pod has three members:
 
 - Adam Salman — [Portfolio](https://github.com/adamhsalman-droid/Adam.Salman-Portfolio)
-- Mohamed Hamed — [Portfolio](https://github.com/nassarrrrr/M.Nassar-HSBI-Database-Portofolio)
+- Mohamed Alsayed — [Portfolio](https://github.com/mbahnasy426/Mohamed-Hamed)
 - Mohamed Nassar — [Portfolio](https://github.com/nassarrrrr/M.Nassar-HSBI-Database-Portofolio)
 
 ## Contributions
