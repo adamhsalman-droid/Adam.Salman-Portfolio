@@ -26,6 +26,10 @@ One idea I found interesting was **local-first**: keeping data on my own compute
 
 At first, the differences between data, a database, SQL, and SQLite were confusing. The lecture and exercises helped me connect these ideas. I still want to get more comfortable writing SQL queries without examples and understanding when to use different commands.
 
+## Time limitation during the lecture
+
+We did not have enough time to complete Tasks 6 and 7 during the lecture. We worked on those tasks afterwards, outside class time, to finish the practical work and documentation.
+
 ## Overall reflection
 
 The most important thing I learned is that databases are not just places to save information: we can use SQL to organize, search, and change that information. I also liked the local-first idea because it allows me to work with my data without depending on an internet connection. The first five tasks helped me turn the lecture concepts into practical experience.
