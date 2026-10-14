@@ -21,8 +21,17 @@ My goal is to understand the basics of databases and practise using them through
 - [SQL Island notes](sql-island.md)
 - [AI query verification](task-07-ai-verification.md)
 
-**Task Pod:** _Add links to the actual portfolios of my teammates when available._
-**Contributions:** _Record who completed and reviewed each exercise._
+## Task Pod
+
+Our Task Pod has three members:
+
+- Adam Salman — [Portfolio](https://github.com/adamhsalman-droid/Adam.Salman-Portfolio)
+- Mohamed Hamed — [Portfolio](https://github.com/nassarrrrr/M.Nassar-HSBI-Database-Portofolio)
+- Mohamed Nassar — [Portfolio](https://github.com/nassarrrrr/M.Nassar-HSBI-Database-Portofolio)
+
+## Contributions
+
+We worked together as a Task Pod, discussing the assignments and reviewing our progress.
 
 ## Task evidence checklist
 
