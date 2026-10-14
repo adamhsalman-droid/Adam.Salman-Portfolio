@@ -46,7 +46,7 @@ Our Task Pod has three members:
 - [ ] **Task 4:** Use `sqlite3` to create `shell-tour.txt` and a fresh `tour.sql` dump; record my favourite dot-command
 - [ ] **Task 5:** Play SQL Island and complete [my answers](sql-island.md) with a real progress screenshot
 - [x] **Task 6:** Run `generate_telemetry.py`, `load_telemetry.py`, and `query_telemetry.py`; save file size, row counts, and timed results
-- [ ] **Task 7:** Run and inspect the AI query; record its real query plan and a verification paragraph
+- [x] **Task 7:** Run and inspect the AI query; record its real query plan and a verification paragraph
 - [ ] Complete [Module 01 reflection](reflection.md)
 
 ## Reproducing Tasks 3, 6 and 7
