@@ -1,29 +1,27 @@
 # Reflection 01 — Introduction and Local-First Databases
 
-## My take-away
+## What did I learn?
 
-Before this class, I could not clearly explain the difference between data, a database, SQL, and SQLite. I learned that data is information, a database organizes that information, and SQL (Structured Query Language) is how we ask a relational database to retrieve or change records. SQLite is an embedded database engine, not a programming language.
-
-My advice to myself is to practise writing and **running** queries instead of just reading SQL examples. I also learned why AI output must be checked against real database results.
+Before this lecture, databases and SQL were new to me. I learned that **data** is information, a **database** stores and organizes it, and **SQL** is a language for finding, adding, changing, and deleting data. **SQLite** lets us work with a database directly on our computer, even without internet access.
 
 ## What went well?
 
-Creating my GitHub portfolio helped me organize the course work. I practised `SELECT`, `WHERE`, grouping and other SQL operations in SQL Island. I also helped generate and query a small CNC telemetry dataset containing 172,800 readings. I could inspect actual query results and understand why SQLite can be practical for a local application.
+I learned to use GitHub to organize my work and practised basic SQL commands such as `SELECT` and `WHERE` in SQL Island. Our team also worked with a SQLite database containing **172,800 machine readings**. This helped me see how databases work in a real example.
 
 ## What was difficult?
 
-At first I confused data, databases, SQL and SQLite. Setting up tools and using the command line also took practice. Understanding query execution plans was new to me: a successful query can still perform a full table scan. I want to improve writing queries without relying on examples.
+At first I mixed up SQL and SQLite. I also found the terminal and query plans difficult. With practice and help from my teammates, they became clearer. I still need more SQL practice.
 
-## Exploration and an important correction
+## Teamwork and time in class
 
-During the lecture we did not have enough time for Tasks 6 and 7, so we worked on them afterwards. One useful discovery came while verifying an AI-generated query: its filter for readings 'after 18:00' did **not** represent a full overnight shift through 06:00. The SQL ran and returned reasonable-looking numbers, but it did not necessarily answer the intended question. I documented the original run, the execution plan, and the suggested correction without claiming that the correction was tested.
+We worked in a group of three. Mohamed Nassar worked mainly on Tasks 1–4, Mohamed Alsayed/Hamed on Task 5, and I worked mainly on Tasks 6–7. We discussed and checked our work together. We did not have enough time for Tasks 6 and 7 in class, so we finished them afterwards.
 
-## Interaction with peers and instructor
+## What surprised me? How did I check AI?
 
-Our Task Pod divided the work and discussed results: Mohamed Nassar focused on Tasks 1–4, Mohamed Alsayed/Hamed on Task 5, and I focused on Tasks 6–7. Working with the pod helped me understand different steps in the workflow. I would like feedback on our evidence and how best to explain the query-plan results.
+We used ChatGPT to help write an SQL query. The query ran, but it treated *overnight* as only after 18:00, leaving out the time after midnight. I checked the saved results and `EXPLAIN QUERY PLAN` and documented this problem. I learned that **AI can make mistakes, so we must check its answers**. The proposed corrected time filter has not yet been tested.
 
-## Help, contributions and AI verification
+## My main takeaway
 
-I contributed the telemetry-data work and AI-query verification. We used ChatGPT to assist with a query, but I checked its output and `EXPLAIN QUERY PLAN` instead of assuming it was right. We learned that a query running successfully is not proof that its meaning is correct.
+**A database stores organized information, SQL helps us work with it, and we should always check our results.**
 
-See the [Module 1 evidence](../Module01/README.md) and [detailed original reflection](../module-01/reflection.md).
+See [Module 1 evidence](../Module01/README.md) and the [original longer reflection](../module-01/reflection.md).
