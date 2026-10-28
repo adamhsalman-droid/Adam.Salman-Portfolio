@@ -7,7 +7,7 @@ This is my personal learning portfolio for the course. It collects the scripts, 
 ## Module index
 
 - [Module 01 — Introduction and Local-First Foundations](Module01/README.md) — [practical scripts and results](module-01/README.md)
-- [Module 02 — Data Contracts and Legacy Schemas](Module02/README.md) — work in progress
+- [Module 02 — Data Contracts and Legacy Schemas](Module02/README.md) — ER models, tested defect queries, and data contract
 - Module 03 — LLM-Assisted SQL and Query Profiling — not yet
 
 ## Module 01 highlights
