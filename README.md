@@ -1,47 +1,33 @@
 # HSBI Databases Portfolio
 
-This repository contains my portfolio for the Databases course at Hochschule Bielefeld (HSBI). It includes my exercises, assignments, and reflections throughout the semester.
+**Adam Salman** — Databases course, Hochschule Bielefeld (HSBI).
 
-## Author
+This is my personal learning portfolio for the course. It collects the scripts, recorded observations, SQL practice, Task Pod collaboration and reflections that I can explain and reproduce.
 
-Adam Salman
+## Module index
 
-## Course Overview
+- [Module 01 — Introduction and Local-First Foundations](Module01/README.md) — [practical scripts and results](module-01/README.md)
+- [Module 02 — Data Contracts and Legacy Schemas](Module02/README.md) — work in progress
+- Module 03 — LLM-Assisted SQL and Query Profiling — not yet
 
-In this course, I am learning how databases work, how to use SQL, and how to manage and analyze data using different tools.
+## Module 01 highlights
 
-This portfolio documents my progress throughout the semester.
+- Python 3.14 + SQLite, DuckDB, Datasette and uv environment records.
+- SQL Island exercise and a screenshot of pod progress.
+- Generated **172,800** telemetry readings across three CNC machines, stored in embedded SQLite.
+- Saved real query outputs and a query plan.
+- A checked AI-generated SQL query, including a documented meaning error.
+- [Module 1 reflection](Reflections/ref01.md).
 
-## Table of Contents
+## Task Pod
 
-- [Module 01: Introduction and Local-First](module-01/README.md)
+- [Adam Salman](https://github.com/adamhsalman-droid/Adam.Salman-Portfolio)
+- [Mohamed Nassar](https://github.com/nassarrrrr/M.Nassar-HSBI-Database-Portofolio)
+- [Mohamed Alsayed / Hamed](https://github.com/mbahnasy426/Mohamed-Hamed)
 
-## Module 01 — Introduction and Local-First
+See [Module 1](Module01/README.md) for roles, links, evidence and reproducibility steps.
 
-In Module 01, I worked on setting up my development environment and practicing SQL using SQLite and SQL Island.
+## Links
 
-My work includes:
-
-- Setting up Python 3.14 and installing the required database tools.
-- Creating and querying a SQLite database.
-- Practicing SQL through SQL Island.
-- Generating and analyzing 172,800 sensor readings.
-- Testing and verifying an AI-generated SQL query.
-
-The code, results, and reflections are available in the [Module 01 folder](module-01/README.md).
-
-## Learning Goals
-
-- Understand basic database concepts.
-- Learn how to write SQL queries.
-- Become comfortable working with SQLite and Python.
-- Learn how to verify query results and understand database performance.
-
-## Tools Used
-
-- Python
-- SQLite
-- DuckDB
-- uv
-- Git and GitHub
-- Visual Studio Code
+- [Course syllabus](https://github.com/iotempire/iotempire-teaching/blob/main/full-classes/hsbi-databases-10d/syllabus.md)
+- [Module 1 course instructions](https://github.com/iotempire/iotempire-teaching/blob/main/full-classes/hsbi-databases-10d/modules/01-introduction-and-local-first.md)
