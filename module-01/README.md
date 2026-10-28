@@ -38,16 +38,20 @@ Our Task Pod has three members:
 **Teamwork:** All three members discussed the assignments, reviewed the results, and supported each other throughout the project.
 
 
-## Task evidence checklist
+## Evidence status (updated October 2026)
 
-- [ ] **Task 1:** Instructor collaborator, local clone, and first commit verified
-- [ ] **Task 2:** Several clear commits, at least three working links including a teammate
-- [ ] **Task 3:** Run `uv` and commit the generated `pyproject.toml` and `uv.lock` alongside `uv-check.py` output
-- [ ] **Task 4:** Use `sqlite3` to create `shell-tour.txt` and a fresh `tour.sql` dump; record my favourite dot-command
-- [ ] **Task 5:** Play SQL Island and complete [my answers](sql-island.md) with a real progress screenshot
-- [x] **Task 6:** Run `generate_telemetry.py`, `load_telemetry.py`, and `query_telemetry.py`; save file size, row counts, and timed results
-- [x] **Task 7:** Run and inspect the AI query; record its real query plan and a verification paragraph
-- [ ] Complete [Module 01 reflection](reflection.md)
+- [x] **Portfolio / Task Pod:** own repository, links to podmates, descriptions of contributions.
+- [x] **Python environment:** saved `uv-check-output.txt`, `pyproject.toml`, `uv.lock` and `uv-check.py`.
+- [x] **SQLite shell / SQL Island:** saved shell tour, SQL samples and SQL Island screenshot. [SQL Island notes](sql-island.md).
+- [x] **Telemetry:** reproducible generator, loader, query script, and saved results (172,800 readings).
+- [x] **AI verification:** recorded query, actual plan, and documented limitation of the AI's interpretation of *overnight*. [Verification note](task-07-ai-verification.md).
+- [x] **Reflection:** [completed logbook](../Reflections/ref01.md).
+- [x] **Bound parameters:** `load_telemetry.py` uses `executemany` with placeholders; [parameter-demo.py](parameter-demo.py) illustrates a parameterized `SELECT`.
+- [ ] **Live peer gate:** make and show a new commit from your own laptop; independently test the Markdown links.
+- [ ] **Instructor access:** confirm collaborator permissions in GitHub Settings.
+- [ ] **Embedded vs server:** SQLite measurements are saved, but an equivalent client/server measurement has not been run. [Comparison and honest evidence status](local-first-comparison.md).
+
+This is evidence of work saved in the portfolio, not a claim that each step was independently rerun in this review.
 
 ## Reproducing Tasks 3, 6 and 7
 
