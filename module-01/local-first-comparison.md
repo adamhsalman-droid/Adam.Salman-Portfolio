@@ -26,3 +26,7 @@ There is **no measured client/server baseline** here. To compare fairly, import 
 2. Inspect [query-results.txt](query-results.txt) as the previously saved output.
 3. Use [parameter-demo.py](parameter-demo.py) to see a bound parameter in a read query.
 4. Add a genuine server comparison only after running it.
+
+## Would the cloud cost money?
+
+Running a cloud database would normally add hosting, operations and possibly network costs, paid by the company operating the CNC dashboard. **No actual cloud invoice or price comparison was measured** in this exercise. For one local dashboard and a weekly report, SQLite avoids the need to maintain a separate database server.
