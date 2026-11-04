@@ -41,7 +41,7 @@ The runner rebuilds `Module03/warehouse.db` from [setup.sql](setup.sql), verifie
 sqlite3 Module03/warehouse.db ".read Module03/setup.sql"
 ```
 
-`warehouse.db` is ignored by Git. The committed `results.txt` records a reproducibility check in an execution environment, **not a benchmark observed on the student's Windows machine**. Run the command on your own machine before presenting times to the professor; timings and some query plans may vary by SQLite version.
+`warehouse.db` is ignored by Git. The committed `results.txt` records an **independent verification of the same queries** in an execution environment, **not a direct log from this runner or a benchmark observed on the student's Windows machine**. Running the runner on your PC overwrites the file with its direct local evidence. Run the command on your own machine before presenting times to the professor; timings and some query plans may vary by SQLite version.
 
 ## To explain it to the professor
 
