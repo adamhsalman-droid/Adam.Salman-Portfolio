@@ -44,7 +44,8 @@ def demonstrate() -> str:
             details.append("Unsafe apostrophe: unexpectedly accepted")
         except sqlite3.Error as exc:
             details.append(f"Unsafe apostrophe: SQL error: {exc}")
-        details.append(f"Safe apostrophe rows: {safe(conn, "O'Brien")}")
+        apostrophe_rows = safe(conn, "O'Brien")
+        details.append(f"Safe apostrophe rows: {apostrophe_rows}")
         details.append("PASS: bound parameters treat user input as data, not SQL")
         return "\n".join(details)
 
