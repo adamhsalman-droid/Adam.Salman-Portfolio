@@ -8,7 +8,7 @@ This is my personal learning portfolio for the course. It collects the scripts, 
 
 - [Module 01 — Introduction and Local-First Foundations](Module01/README.md) — [practical scripts and results](module-01/README.md)
 - [Module 02 — Data Contracts and Legacy Schemas](Module02/README.md) — ER models, tested defect queries, and data contract
-- Module 03 — LLM-Assisted SQL and Query Profiling — not yet
+- [Module 03 — LLM-Assisted SQL and Query Profiling](Module03/README.md) — runnable profiler, SQL injection demo, query verification and relational algebra
 
 ## Module 01 highlights
 
@@ -27,6 +27,12 @@ This is my personal learning portfolio for the course. It collects the scripts, 
 - Recorded the university neighboring-pod exchange and its learning points in the [study log](Module02/study-log.md).
 - [Module 2 reflection](Reflections/ref02.md) · [Verification notes](Module02/verification-notes.md) · [Module 2 portfolio evidence](Module02/README.md).
 - The Discord image share is not confirmed in the current portfolio and is not claimed as completed.
+
+## Module 03 highlights
+
+- [Module 3 reproducible lab](Module03/README.md): warehouse generator, AI-assisted city revenue query, plans and median index benchmark.
+- [SQL injection demo](Module03/injection_demo.py) with bound parameters and [algebra + optional window-function work](Module03/algebra.md).
+- [Module 3 study notes](Module03/sql-notes.md) · [Reflection 03](Reflections/ref03.md). Actual neighboring-pod exchange remains to be recorded.
 
 ## Task Pod
 
