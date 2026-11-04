@@ -26,12 +26,12 @@
 
 See [er-examples.md](er-examples.md) for four Mermaid diagrams (1:1 nameplate, 1:n sensors, m:n work orders/parts, and maintenance jobs) and a `CREATE TABLE` / `COUNT` demonstration.
 
-## Two useful reference sketches
+## Two reference diagram styles and our redraws
 
-1. **Machine → Sensor (1:n)** in [our ER examples](er-examples.md): illustrates why the FK goes on the many-side table.
-2. **WorkOrder ↔ Part via OrderPart (m:n)** in [our ER examples](er-examples.md): illustrates why a junction table avoids comma-separated parts.
+1. **Chen ER notation:** [ER model examples on Wikipedia](https://en.wikipedia.org/wiki/Entity%E2%80%93relationship_model) show relationships as diamonds. This helped me see the difference between a relationship and an attribute.
+2. **Crow's-foot ER notation:** [Mermaid's ER diagram examples](https://mermaid.js.org/syntax/entityRelationshipDiagram.html) show how to express one-to-one, one-to-many and many-to-many connections visually.
 
-These are our own explanatory Mermaid sketches, not externally discovered screenshots.
+We redrew and applied these ideas in our own [four ER examples](er-examples.md), especially **Machine → Sensor (1:n)** and **WorkOrder ↔ Part via OrderPart (m:n)**. These are our own Mermaid drawings, not photographs of external diagrams.
 
 ## LLM-assisted Q&A and verification
 
@@ -55,10 +55,22 @@ These prompts and summaries document the reasoning used to audit the dataset; th
 - `P-1003` is duplicated; a join duplicates job 2.
 - Job 1 completely disappears from a join because its two part numbers were stored as one string.
 
-## Agreed learning (pod discussion) — not yet documented
+## Agreed learning (pod discussion)
 
-To complete this activity honestly, discuss the ER sketches and queries with the Task Pod and neighboring Pod. Record 3–5 points actually agreed upon, any disagreement, and the selected diagram posted in Discord. **No peer discussion or Discord post is claimed here.**
+The university pod exchange **took place** with a neighboring group that included **Habiba Aladdin Darwish, Arshia and Asima**, as also documented in [Mohamed Hamed's Module 2 reflection](https://github.com/mbahnasy426/Mohamed-Hamed/blob/main/Reflections/ref02.md) and [Mohamed Nassar's study log](https://github.com/nassarrrrr/M.Nassar-HSBI-Database-Portofolio/blob/main/Module02/study-log.md). The professor joined and gave feedback, as reported in Hamed's reflection.
 
-## Next steps
+We discussed these points:
 
-Confirm the diagrams with classmates, demonstrate the SQLite query results, and check the corrected database schema.
+1. **1:1:** A machine and its nameplate can be modeled separately, with a unique key, or the nameplate details can be attributes of Machine depending on requirements.
+2. **1:n:** One machine may have many sensors. The foreign key goes in the **Sensor** table (the many side).
+3. **m:n:** Many work orders may use many parts. A **junction table** is required; storing a list of part numbers in a text cell is not a proper relationship.
+4. **Keys:** Primary keys identify records; foreign keys link records to another table. Constraints matter because names and free text do not guarantee valid links.
+5. **Verify findings:** SQL counts and joins are needed to check assumptions made from a diagram.
+
+Nassar's notes report **no outstanding disagreement** from that exchange. **Discord status:** the shared image is *not confirmed as posted*; Nassar's last written note says it was still pending. This section records the real discussion without inventing a Discord link.
+
+## Verified local work and next steps
+
+- On **4 November 2026**, the SQL defect queries ran in VS Code and the Pydantic/SQLAlchemy contract printed three PASS checks. Details: [verification-notes.md](verification-notes.md).
+- Confirm with the Task Pod whether the selected diagram was actually posted to Discord; add a real link or screenshot only if available.
+- Keep practising drawing ER diagrams independently and explain the differences between 1:1, 1:n and m:n.
