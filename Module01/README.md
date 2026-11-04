@@ -44,11 +44,12 @@ uv run python module-01/parameter-demo.py
 
 The generated `.csv` and `.db` are intentionally ignored by Git. The stored query results reflect a previous local run; rerun locally to verify on your own machine.
 
-## Evidence still to verify live
+## Evidence status and limits
 
-- Instructor collaborator access (cannot be proven by the public file list).
-- Successful edit/commit in the peer feedback round.
-- A measured embedded vs client/server comparison on equivalent workloads (not yet recorded; see linked note).
-- SQL Island progress screenshot ownership and explanation, and a full local command-line rerun.
+- **Core Module 1 work is documented:** Tasks 1–7 have linked portfolio files, including environment records, SQL Island practice, telemetry scripts, SQL query results, AI checking, and [Reflection 01](../Reflections/ref01.md). [Mohamed Hamed's Module 1 README](https://github.com/mbahnasy426/Mohamed-Hamed/blob/main/Module01/README.md) describes the same Task Pod division.
+- **Instructor access:** the student previously reported adding the professor; this permission cannot be verified from the public file listing. Confirm in GitHub Settings if asked at the checkpoint.
+- **Live peer Git/Markdown check:** the portfolio has commits and working links, but an observed peer editing round was not independently documented here.
+- **Embedded versus client/server measurement:** an actual equivalent-workload PostgreSQL/MySQL benchmark was **not** recorded. The [local-first comparison](../module-01/local-first-comparison.md) distinguishes explanation from measured evidence.
+- **SQL Island and reproducibility:** the saved progress screenshot and sample outputs document pod activity; they should be explained at the checkpoint, and scripts can be rerun locally.
 
 [Module 1 instructions](https://github.com/iotempire/iotempire-teaching/blob/main/full-classes/hsbi-databases-10d/modules/01-introduction-and-local-first.md) · [Syllabus](https://github.com/iotempire/iotempire-teaching/blob/main/full-classes/hsbi-databases-10d/syllabus.md)
