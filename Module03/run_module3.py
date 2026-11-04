@@ -119,11 +119,9 @@ def main() -> None:
 
         say("TASK 5 - OPTIONAL STRETCH: 3 equivalent late-order reports")
         reports = (HERE / "stretcher_queries.sql").read_text(encoding="utf-8")
-        statements = [q.strip() for q in reports.split(";") if q.strip() and
-                      not q.strip().startswith("--")]
-        # Strip comment lines without affecting the SELECT statements.
-        statements = ["\n".join(line for line in q.splitlines()
-                      if not line.strip().startswith("--")) for q in reports.split(";")]
+        # Strip SQL-only comments before splitting into the three statements.
+        reports = "\n".join(line for line in reports.splitlines() if not line.strip().startswith("--"))
+        statements = [q.strip() for q in reports.split(";") if q.strip()]
         statements = [s.strip() for s in statements if s.strip()]
         assert len(statements) == 3, len(statements)
         conn.execute("CREATE INDEX IF NOT EXISTS ix_orders_customer_status ON orders(customer_id, status)")
