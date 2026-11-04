@@ -19,6 +19,15 @@ This is my personal learning portfolio for the course. It collects the scripts, 
 - A checked AI-generated SQL query, including a documented meaning error.
 - [Module 1 reflection](Reflections/ref01.md).
 
+## Module 02 highlights
+
+- Reconstructed the old maintenance database as an ER model, including 1:1, 1:n, and m:n examples.
+- Used SQL to demonstrate five data-integrity defects and documented an improved schema.
+- Tested the Pydantic/SQLAlchemy data contract locally, with three successful checks on 4 November 2026.
+- Recorded the university neighboring-pod exchange and its learning points in the [study log](Module02/study-log.md).
+- [Module 2 reflection](Reflections/ref02.md) · [Verification notes](Module02/verification-notes.md) · [Module 2 portfolio evidence](Module02/README.md).
+- The Discord image share is not confirmed in the current portfolio and is not claimed as completed.
+
 ## Task Pod
 
 - [Adam Salman](https://github.com/adamhsalman-droid/Adam.Salman-Portfolio)
