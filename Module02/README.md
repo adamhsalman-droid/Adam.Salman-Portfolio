@@ -12,7 +12,7 @@
 | Explain natural vs surrogate keys | [ER audit — key choices](er-audit.md) |
 | Implement a code-first data contract | [Pydantic + SQLAlchemy contract](contract.py) |
 | Describe the missing business requirements | [Business rules](er-audit.md) |
-| Record sources, verification and learning | [Study log](study-log.md) and [Reflection 02](../Reflections/ref02.md) |
+| Record sources, verification and learning | [Study log](study-log.md), [Reflection 02](../Reflections/ref02.md), and [local verification notes](verification-notes.md) |
 
 ## Reproduce the legacy database and tests
 
@@ -34,11 +34,18 @@ The `setup.sql` is rerunnable and intentionally creates an **incorrect** schema.
 4. A machine has installed date `unknown`.
 5. `parts_used` contains comma-separated values, which hides a many-to-many relationship.
 
-## What is still to verify
+## Verified work and teamwork
 
-- Run the SQL and the Pydantic/SQLAlchemy contract on the student's own environment; the five legacy defect results were checked using SQLite, but the committed contract is not yet accompanied by captured runtime DDL output.
-- Complete a **real** neighboring-pod discussion, record the agreed learning and share a diagram on Discord. The portfolio does not claim those events occurred.
-- Optional stretcher work on EER inheritance and additional Mermaid curiosities is not included.
+- **SQL audit tested locally on 4 November 2026:** the five-defect script ran without an error. See [verification notes](verification-notes.md) and [the documented defect findings](er-audit.md).
+- **Data contract tested locally on 4 November 2026:** the student ran `uv run python Module02/contract.py` and observed three PASS checks for serial validation, foreign-key enforcement, and corrected-schema creation. See [verification notes](verification-notes.md) and the committed [corrected schema](corrected-schema.sql).
+- **University pod discussion completed:** we compared diagrams with the neighboring pod including Habiba Aladdin Darwish, Arshia and Asima. The professor also joined and provided feedback, as recorded by [our teammate Mohamed Hamed](https://github.com/mbahnasy426/Mohamed-Hamed/blob/main/Reflections/ref02.md). Our 1:1, 1:n and m:n conclusions are recorded in [study-log.md](study-log.md).
+- **Reflection recorded:** [Reflection 02](../Reflections/ref02.md).
+
+## What is not yet confirmed
+
+- **Discord:** No proof of the selected diagram being posted is available here. [Mohamed Nassar's study log](https://github.com/nassarrrrr/M.Nassar-HSBI-Database-Portofolio/blob/main/Module02/study-log.md) last recorded it as pending; add the actual screenshot or link if the team posted it later.
+- **Runtime evidence:** the passing terminal output was observed in VS Code screenshots and summarized in the verification notes, but a complete raw output file has not been committed.
+- **Optional stretchers:** EER inheritance and extra Mermaid curiosities are not included.
 
 ## One-minute explanation in English
 
