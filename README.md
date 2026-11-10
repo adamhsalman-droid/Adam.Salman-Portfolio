@@ -10,6 +10,7 @@ This is my personal learning portfolio for the course. It collects the scripts, 
 - [Module 02 — Data Contracts and Legacy Schemas](Module02/README.md) — ER models, tested defect queries, and data contract
 - [Module 03 — LLM-Assisted SQL and Query Profiling](Module03/README.md) — runnable profiler, SQL injection demo, query verification and relational algebra
 - [Module 04 — Data Integrity, Constraints & Edge Triggers](Module04/README.md) — STRICT constraints, UPSERT, alarms, audit, local read-only access
+- [Module 05 — Normalization vs. Denormalization](Module05/README.md) — 200k-row 3NF comparison, plans, storage and memo
 
 ## Module 01 highlights
 
@@ -41,6 +42,13 @@ This is my personal learning portfolio for the course. It collects the scripts, 
 - [Replay-safe CSV ingestion](Module04/ingest.py) demonstrated 11 readings after each of two passes, with no duplicates.
 - [Alarm and audit triggers](Module04/triggers.sql), [10,000-row benchmark evidence](Module04/results.txt), and a read-only `machine_health` view.
 - [Study notes](Module04/integrity-notes.md) · [Reflection 04](Reflections/ref04.md). Local Windows verification and the real pod exchange remain follow-ups.
+
+## Module 05 highlights
+
+- [Reproducible Module 05 studio](Module05/README.md) implements the seven rounds on a 200,000-row flat and normalized dataset.
+- [SQL setup](Module05/setup.sql), [repeatable benchmark](Module05/run_module5.py), and [measured evidence](Module05/results.txt) cover 3NF, aggregation query plans, storage, and the 1 vs 4,000-row update cost.
+- [Decision memo](Module05/memo.md) · [FDs, diagrams and curiosities](Module05/normalization-notes.md) · [Reflection 05](Reflections/ref05.md).
+- `Module05/normalize.db` is generated and retained locally for Module 06a; it is not tracked on GitHub. The missed in-person pod gates are not claimed as completed.
 
 ## Task Pod
 
