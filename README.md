@@ -12,6 +12,8 @@ This is my personal learning portfolio for the course. It collects the scripts, 
 - [Module 04 — Data Integrity, Constraints & Edge Triggers](Module04/README.md) — STRICT constraints, UPSERT, alarms, audit, local read-only access
 - [Module 05 — Normalization vs. Denormalization](Module05/README.md) — 200k-row 3NF comparison, plans, storage and memo
 
+- [Module 06a — The Analytical Engine (DuckDB)](Module06a/README.md) — Parquet, verified SQL race, plan, OLTP boundary and memo
+
 ## Module 01 highlights
 
 - Python 3.14 + SQLite, DuckDB, Datasette and uv environment records.
@@ -49,6 +51,13 @@ This is my personal learning portfolio for the course. It collects the scripts, 
 - [SQL setup](Module05/setup.sql), [repeatable benchmark](Module05/run_module5.py), and [measured evidence](Module05/results.txt) cover 3NF, aggregation query plans, storage, and the 1 vs 4,000-row update cost.
 - [Decision memo](Module05/memo.md) · [FDs, diagrams and curiosities](Module05/normalization-notes.md) · [Reflection 05](Reflections/ref05.md).
 - `Module05/normalize.db` is generated and retained locally for Module 06a; it is not tracked on GitHub. The missed in-person pod gates are not claimed as completed.
+
+## Module 06a highlights
+
+- [DuckDB analytical lab](Module06a/README.md) recreates the Module 05 history as two million rows and checks a Parquet copy.
+- [Reproducible benchmark](Module06a/run_module6a.py) checks equivalent queries and records SQLite-vs-DuckDB medians, plans and OLTP boundary tests.
+- [Decision memo](Module06a/memo.md) · [Studio notes](Module06a/duckdb-notes.md) · [Reflection 06a](Reflections/ref06a.md).
+- Local `.db`, `.csv` and `.parquet` artefacts remain excluded from GitHub.
 
 ## Task Pod
 
