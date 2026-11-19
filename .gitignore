@@ -11,3 +11,6 @@
 .env.*
 __pycache__/
 *.py[cod]
+
+# Module 6b Python shelve creates backend-specific filenames
+Module06b/sessions*

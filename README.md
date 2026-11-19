@@ -13,6 +13,7 @@ This is my personal learning portfolio for the course. It collects the scripts, 
 - [Module 05 — Normalization vs. Denormalization](Module05/README.md) — 200k-row 3NF comparison, plans, storage and memo
 
 - [Module 06a — The Analytical Engine (DuckDB)](Module06a/README.md) — Parquet, verified SQL race, plan, OLTP boundary and memo
+- [Module 06b — Polyglot Persistence & the Decision](Module06b/README.md) — JSON/index plans, key-value benchmark, concurrency fallback, engine record and Module 7 project ticket
 
 ## Module 01 highlights
 
@@ -58,6 +59,12 @@ This is my personal learning portfolio for the course. It collects the scripts, 
 - [Reproducible benchmark](Module06a/run_module6a.py) checks equivalent queries and records SQLite-vs-DuckDB medians, plans and OLTP boundary tests.
 - [Decision memo](Module06a/memo.md) · [Studio notes](Module06a/duckdb-notes.md) · [Reflection 06a](Reflections/ref06a.md).
 - Local `.db`, `.csv` and `.parquet` artefacts remain excluded from GitHub.
+
+## Module 06b highlights
+
+- [Module 06b lab](Module06b/README.md) includes JSON expression-index evidence, 20,000-session `shelve` / SQLite comparisons, and a local two-writer fallback.
+- [Engine decision record](Module06b/engine-notes.md) separates real previous-module evidence, independent test-environment timings, and official reference values.
+- [Module 7 project ticket](Module06b/project-ticket.md) · [Reflection 06b](Reflections/ref06b.md). Shared PostgreSQL, own-device benchmarking and real peer defence remain to be recorded.
 
 ## Task Pod
 
