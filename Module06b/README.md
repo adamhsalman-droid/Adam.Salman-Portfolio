@@ -25,11 +25,9 @@ Or run `json_bench.py`, `local_boundary.py` and `kv_compare.py` separately. Each
 
 ## Task 1 — Boundary: local versus server
 
-The classroom exercise requires the instructor's shared PostgreSQL server, LMS credentials and **two separate browser sessions or student devices**. It also requires observing a controlled outage. No classroom access has been used for this portfolio entry.
+**Completed in the instructor's shared pgweb classroom server:** logged into PostgreSQL `pod15`, queried `machine`, verified a machine row at Bielefeld, and ran increment updates from two browsers. A later read of machine 1 showed `parts_produced=3` (three successful increments over the attempts). The instructor then stopped PostgreSQL: queries failed until the service was restarted; after restart queries worked again.
 
-The permitted **SQLite fallback** was run: transaction A begins with `BEGIN IMMEDIATE`, transaction B's update gets `database is locked`, then after A commits B retries successfully; the value reaches 2.
-
-**Three server trade-off predictions to check in class (not first-hand observations):** (1) easier: multiple people connect to one shared database from different devices; (2) harder: credentials, deployment, latency and backups; (3) added failure: network/server downtime makes remote queries unavailable, whereas an embedded local file does not need that server. In class I must also document the two-writer PostgreSQL result.
+**My three observations:** Shared access across browsers became easier; remote login/service management became harder; server downtime prevented all remote database queries. The exact PostgreSQL writer lock/wait behavior **was not observed**; quick committed updates are not proof of blocking. The separate `local_boundary.py` SQLite fallback demonstrates locking locally. See [engine notes](engine-notes.md#task-1--shared-postgresql-server-classroom-observation).
 
 ## Task 2 — Shape
 
@@ -48,4 +46,4 @@ The one-page [engine decision record](engine-notes.md#one-page-engine-decision-r
 - [Reflection 06b](../Reflections/ref06b.md), explicitly listing remaining classroom work.
 - [Nassar's Module 06b](https://github.com/nassarrrrr/M.Nassar-HSBI-Database-Portofolio/tree/main/Module06b) was used for pod structure and comparison. [Hamed's portfolio](https://github.com/mbahnasy426/Mohamed-Hamed) has no Module 06b directory at the time of this preparation. All claimed execution output here belongs to this test environment, not a teammate.
 
-**Status:** JSON experiment, local concurrency fallback, key-value homework, decision draft, project ticket, reflection: prepared and locally tested where applicable. Shared PostgreSQL outage/concurrency demo, own-device timings, Module 06a own-device historical-report benchmark, and real pod defence: **still to do**.
+**Status:** JSON experiment, local concurrency fallback, key-value homework, decision draft, project ticket, reflection: prepared and locally tested where applicable. Shared PostgreSQL connection, writes and outage/recovery **observed**; PostgreSQL transaction lock/wait, own-device timings, Module 06a own-device historical-report benchmark, and real pod defence: **still to do**.
