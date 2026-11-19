@@ -3,16 +3,20 @@
 **Owner:** Adam Salman · **Case:** Kortmann plant.  
 Sources: [Module 6b instructions](https://github.com/iotempire/iotempire-teaching/blob/main/full-classes/hsbi-databases-10d/modules/06b-polyglot-persistence.md), [Module 4 evidence](../Module04/results.txt), [Module 5 evidence](../Module05/results.txt), [Module 6a memo](../Module06a/memo.md), and [Module 6b experiment output](results.txt).
 
-## Task 1 — server boundary (pending classroom lab)
+## Task 1 — shared PostgreSQL server (classroom observation)
 
-The shared PostgreSQL bench requires instructor-provided LMS access and an actual two-writer/server-stop demonstration. **Not performed**; do not claim instructor observation.
+**Actual classroom work on the instructor's pgweb server:** Connected successfully to database `pod15` and queried the existing `machine` table. The existing machine 1 row was at `guetersloh` and had `parts_produced=0`; machine 2 at `bielefeld` had `parts_produced=0`. Executed SELECT, used an explicit machine ID for INSERT / verified the row existed, and ran `UPDATE machine SET parts_produced = parts_produced + 1 WHERE machine_id = 1` in two separate browsers. The subsequent SELECT returned `parts_produced=3`: three increments had occurred across the attempts, **not** proof that two writers held conflicting transactions simultaneously.
 
-Three *expectations*, to replace with direct observations:
-1. **Easier:** users on separate machines can reach one central data source, with server-side permissions.
-2. **Harder:** credentials, network latency, deployment, monitoring and reliable backup.
-3. **New failure mode:** a server or network outage can stop all remote clients even if their SQL is correct; a standalone embedded SQLite file has no dependency on that remote process.
+**Actual server-outage observation:** The instructor stopped PostgreSQL; the pgweb query failed while the database service was unavailable. After the instructor restarted the service, the same query worked again. This verifies an additional remote-server failure mode, but does not by itself prove persistence across every failure scenario.
 
-**Permitted fallback actually tested:** two SQLite connections update the same row. The second write fails with `database is locked` while the first holds `BEGIN IMMEDIATE`, and after commit/retry `parts_produced=2`. This is not evidence about PostgreSQL's wait or lost-update behavior; an actual PostgreSQL demonstration still needs recording. The SQL `UPDATE machine SET parts_produced = parts_produced + 1 WHERE machine_id = 1` avoids an application-side read–modify–write race.
+Three observations:
+1. **Easier:** Two browser clients can access and update the same central database, without sharing a local SQLite file.
+2. **Harder:** The client must connect to a remote endpoint with credentials, and depends on that service being available.
+3. **Server-only failure mode:** Stopping the shared server made queries fail for clients even though their SQL did not change; when the service returned, querying worked again.
+
+**Concurrent-writer lock/wait observation:** **Still unverified.** We ran fast autocommit updates, not a demonstrated transaction held open during a competing writer's attempt. If the instructor runs a locking demo, add the actual wait/block result here.
+
+**Separate local fallback** (not the PostgreSQL evidence): `local_boundary.py` intentionally holds `BEGIN IMMEDIATE` open in SQLite. A second connection receives `database is locked`; after commit and retry the result is 2. The atomic SQL increment avoids an application-side read-modify-write race.
 
 ## Task 2 — JSON and key–value comparison
 
@@ -34,7 +38,7 @@ Three *expectations*, to replace with direct observations:
 | Month-end report over two years | **DuckDB reading checked Parquet copy** | Module 6a implemented an equivalent 2M-row history and comparison runner, but own-device performance measurements are **pending**; the professor's *reference example* is approx. **600 ms vs 6 ms** (not Adam's result). Module 5 *did* measure 57.603 ms for its 200k-row report query on a different workload | Separate snapshot, scheduled refresh, reconciliation, freshness timestamp | Missing or stale shift distorts report; keep last validated copy and show an “as of” time |
 | Vendor metadata with changing fields | **SQLite JSON column** | 1,000-device generated dataset; malformed JSON rejected, new field read without migration; expression-index query **SEARCH** vs shorthand **SCAN** on 334 matching vendors | Weaker field-level typing; must match expression when filtering | Validate incoming JSON; stable promoted keys may need migration/index management |
 | Dashboard session state | **SQLite key–value table** | This test environment: 20,000 keys, SQLite 0.027 s write / 0.095 s read, shelve 3.957 s write / 0.100 s read; `GROUP BY` across sessions possible | A SQL schema and explicit transaction management | Sessions can expire and be recreated; ensure TTL/privacy policy in production |
-| Optional concurrent network users | **PostgreSQL server** *if required* | Shared-server timing and lock observation **not performed**; local fallback showed a second SQLite writer being blocked | Network, authentication, deployment and outage risk | Server/network failure affects all remote users; use failover/retry plans if the requirement merits the cost |
+| Optional concurrent network users | **PostgreSQL server** *if required* | Shared pgweb SELECT/INSERT/UPDATE and server-outage/recovery observed in pod15; two-writer lock wait **not observed**; local SQLite fallback showed blocking | Network, authentication, deployment and outage risk | Server/network failure affects all remote users; use failover/retry plans if the requirement merits the cost |
 
 **If Kortmann could run only one engine:** **SQLite.** It offers transactions, integrity checks, flexible JSON, and indexed lookups without additional server operations. **The first workload to suffer would be long historical reports** competing with operational writes; Module 6a proposes moving those scans to a checked Parquet copy, but its own-device speedup remains to be measured. At greater network-user concurrency, a server also becomes worth considering.
 
@@ -45,4 +49,4 @@ Three *expectations*, to replace with direct observations:
 - What happens with two simultaneous writers, and how do transactions prevent double counting?
 - Why not several spreadsheets? We need constraints, joins, reproducible imports, audit and reliable queries.
 - **Pod defence:** not yet performed. After a real cross-pod exchange, record the other pod's question, one changed decision row (if any), and why it changed.
-- **Still missing:** own-device key-value results and Module 6a benchmark; instructor's PostgreSQL session; real peer defence.
+- **Still missing:** own-device key-value results and Module 6a benchmark; PostgreSQL lock/wait observation; real peer defence.
